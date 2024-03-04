@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CICD-API", "CICD-API\CICD-API.csproj", "{92BB4F46-688D-44F0-AAF7-9FF9D95CB596}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CICD-Core", "CICD-Core\CICD-Core.csproj", "{A76CB14C-04B9-422B-A73B-1DE28B18B83C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92BB4F46-688D-44F0-AAF7-9FF9D95CB596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92BB4F46-688D-44F0-AAF7-9FF9D95CB596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92BB4F46-688D-44F0-AAF7-9FF9D95CB596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92BB4F46-688D-44F0-AAF7-9FF9D95CB596}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A76CB14C-04B9-422B-A73B-1DE28B18B83C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A76CB14C-04B9-422B-A73B-1DE28B18B83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A76CB14C-04B9-422B-A73B-1DE28B18B83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A76CB14C-04B9-422B-A73B-1DE28B18B83C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D1BA17A-867C-4FA2-93F2-8B9ADF678A2E}
+	EndGlobalSection
+EndGlobal

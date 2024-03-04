@@ -45,7 +45,7 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /var/www/sample-app/
+        local-dir: /var/www/sample-app/
 
     - name: Restart APP
       run: |

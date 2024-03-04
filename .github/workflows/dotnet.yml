@@ -6,39 +6,49 @@ name: .NET
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v3
+  
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 8.0.x
-    - name: Restore dependencies
+
+    - name: Restore Dependencies
       run: dotnet restore
+
     - name: Build
       run: dotnet build --no-restore
+
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
     - name: Publish
-      run: dotnet publish -c Release --output ./Release
+      run: dotnet publish -c Release --output /var/www/sample-app
+
     - name: App Setting Variable
       uses: microsoft/variable-substitution@v1
       with:
-        files: './Release/appsettings.json'
+        files: '/var/www/sample-app/appsettings.json'
       env:
         CustomerDatabase.ConnectionString: ${{ secrets.CONNECTION_STRING }}
+
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./Release/
+        server-dir: /var/www/sample-app/
+
+    - name: Restart APP
+      run: |
+          export XDG_RUNTIME_DIR=/run/user/$(id -u)
+          systemctl --user restart sample-app.service
       
